@@ -115,7 +115,7 @@ OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
 
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)
-  ifneq ($(TARGET_BUILD_VARIANT),eng)
+  ifneq ($(TARGET_BUILD_VARIANT),userdebug)
     ifeq ($(WITH_DEXPREOPT),)
       WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := false
       WITH_DEXPREOPT := true
@@ -166,6 +166,9 @@ BOARD_QTI_CAMERA_32BIT_ONLY := true
 
 #Enable peripheral manager
 TARGET_PER_MGR_ENABLED := true
+
+# Enable workaround for slow rom flash
+BOARD_SUPPRESS_SECURE_ERASE := true
 
 TARGET_FS_CONFIG_GEN += device/lge/bullhead/config.fs
 
