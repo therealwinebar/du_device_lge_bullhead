@@ -31,8 +31,10 @@ TARGET_2ND_CPU_VARIANT := cortex-a53.a57
 TARGET_NO_BOOTLOADER := true
 
 # Inline kernel
-TARGET_KERNEL_SOURCE := kernel/lge/bullhead
-TARGET_KERNEL_CONFIG := lineageos_bullhead_defconfig
+BOARD_KERNEL_IMAGE_NAME :=kernel      
+#TARGET_KERNEL_SOURCE := kernel/lge/bullhead
+#TARGET_KERNEL_CONFIG := lineageos_bullhead_defconfig
+TARGET_PREBUILT_KERNEL :=device/lge/bullhead/kernel
 
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
